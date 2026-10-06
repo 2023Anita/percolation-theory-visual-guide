@@ -1,0 +1,202 @@
+[
+  {
+    "title": "一滴水的难题",
+    "english": "A DROP OF WATER",
+    "lines": [
+      {
+        "zh": "一块岩石里，明明有很多孔隙。水从左边进入，为什么还是到不了右边？",
+        "en": "A rock contains many pores. Why can water enter on the left, yet fail to reach the right?"
+      },
+      {
+        "zh": "把镜头拉近，你会发现：有些孔只连着身边的几个孔，前面却是一堵墙。",
+        "en": "Look closer: some pores connect to nearby pores, but then meet a wall."
+      },
+      {
+        "zh": "孔隙的数量很重要，但能不能连成一条通路，同样重要。",
+        "en": "The number of pores matters. So does whether they form a connected route."
+      },
+      {
+        "zh": "今天，我们用一个可以重复的随机实验，看清渗流的临界点。",
+        "en": "A reproducible random experiment will help us understand the percolation threshold."
+      }
+    ]
+  },
+  {
+    "title": "把岩石变成方格",
+    "english": "THE MODEL",
+    "lines": [
+      {
+        "zh": "先把复杂的岩石，简化成一张方格纸。蓝色格子表示开放，深色格子表示阻塞。",
+        "en": "Simplify the rock into a grid: blue sites are open; dark sites are blocked."
+      },
+      {
+        "zh": "每个格子独立地，以概率 p 开放。这里的 p，是模型参数，不是某一次的精确开放比例。",
+        "en": "Each site opens independently with probability p. It is a model parameter, not the exact open fraction in one trial."
+      },
+      {
+        "zh": "开放的格子，只有上下左右共享一条边，才算连接。对角碰到，不算连接。",
+        "en": "Open sites connect only through shared edges: up, down, left or right. Diagonal contact does not count."
+      },
+      {
+        "zh": "我们从左边界出发，沿开放格子探索。能到右边界，就叫贯穿。",
+        "en": "Explore open sites from the left boundary. Reaching the right boundary means a crossing."
+      },
+      {
+        "zh": "这只是连通模型。画面里的水，表示能够到达，不表示真实流速。",
+        "en": "This is a connectivity model. The water shows reachability, not physical flow speed."
+      }
+    ]
+  },
+  {
+    "title": "小岛怎样连成大陆",
+    "english": "CLUSTERS",
+    "lines": [
+      {
+        "zh": "当开放概率较低，亮起来的格子，大多组成零散的小岛。",
+        "en": "At low opening probability, most open sites form small, scattered islands."
+      },
+      {
+        "zh": "每一团彼此连接的开放格子，叫作一个连通簇。",
+        "en": "Each connected group of open sites is called a cluster."
+      },
+      {
+        "zh": "随着开放概率增加，新的格子会把原来的小簇连接起来。",
+        "en": "As opening probability increases, new sites can join existing clusters."
+      },
+      {
+        "zh": "但是，簇变大了，并不一定已经贯穿。注意金色区域：只有它能从入口到达。",
+        "en": "A larger cluster need not span the grid. Only the gold region is reachable from the inlet."
+      },
+      {
+        "zh": "蓝色区域虽然开放，却可能仍然与入口隔离。",
+        "en": "Blue regions are open, but may remain disconnected from the inlet."
+      }
+    ]
+  },
+  {
+    "title": "连接发生的那一刻",
+    "english": "THE FIRST CROSSING",
+    "lines": [
+      {
+        "zh": "现在，固定同一个随机样本，把开放概率从百分之五十八，逐渐提高到百分之六十。",
+        "en": "Keep the same random sample, and raise p from 58 percent to 60 percent."
+      },
+      {
+        "zh": "每个格子都有预先抽好的随机数，因此新画面只会增加开放格子。",
+        "en": "Each site has a preassigned random number, so increasing p only adds open sites."
+      },
+      {
+        "zh": "看这里：新增的格子接上了两边的簇，一条横跨网格的通路出现了。",
+        "en": "Watch: newly opened sites join clusters, creating a route across the grid."
+      },
+      {
+        "zh": "我们把这一刻放慢。变化发生在少数连接处，影响却覆盖了整个网格。",
+        "en": "Slow it down: a few local connections change connectivity across the whole grid."
+      },
+      {
+        "zh": "这是专门选来讲解的示例样本。它首次贯穿的数值，不等于理论临界值。",
+        "en": "This sample was selected for illustration. Its first-crossing value is not the theoretical threshold."
+      }
+    ]
+  },
+  {
+    "title": "一次成功还不够",
+    "english": "REPEATED TRIALS",
+    "lines": [
+      {
+        "zh": "换一张随机方格，同样的开放概率，可能得到不同结果。",
+        "en": "A different random grid can give a different result at the same p."
+      },
+      {
+        "zh": "所以，我们在一百二十八乘一百二十八的网格上，分别重复一千次独立试验。",
+        "en": "We run one thousand independent trials for each probability on a 128 by 128 grid."
+      },
+      {
+        "zh": "开放概率为百分之五十八时，有187次贯穿；百分之六十时，有700次贯穿。",
+        "en": "At p = 58%, 187 trials cross; at p = 60%, 700 trials cross."
+      },
+      {
+        "zh": "这些是本次模拟的结果。条形图旁的线段，表示百分之九十五置信区间。",
+        "en": "These are the results of this simulation. The whiskers show 95% confidence intervals."
+      },
+      {
+        "zh": "概率差异可以很明显，但有限网格里的失败，不等于数学上的绝对不可能。",
+        "en": "The difference can be substantial, but failure in a finite grid does not mean mathematical impossibility."
+      }
+    ]
+  },
+  {
+    "title": "临界点与网格尺寸",
+    "english": "THE THRESHOLD",
+    "lines": [
+      {
+        "zh": "横轴是开放概率，纵轴是重复试验得到的贯穿概率。每个点都由五百次试验计算。",
+        "en": "The horizontal axis is p; the vertical axis is crossing probability. Each point comes from 500 trials."
+      },
+      {
+        "zh": "比较三种网格尺寸：三十二、六十四，以及一百二十八。",
+        "en": "Compare three grid sizes: 32, 64 and 128 sites per side."
+      },
+      {
+        "zh": "网格越大，临界附近的过渡通常越陡。这叫有限尺寸效应。",
+        "en": "Larger grids usually show a sharper transition near criticality: a finite-size effect."
+      },
+      {
+        "zh": "对无限大的正方形格点、四邻接、独立点渗流，临界开放概率约为百分之五十九点二七。",
+        "en": "For independent site percolation on an infinite square lattice with four neighbors, the threshold is about 59.27%."
+      },
+      {
+        "zh": "这个数字属于特定模型。它不是所有材料和网络共用的常数。",
+        "en": "This number belongs to a specific model. It is not a universal constant for materials and networks."
+      }
+    ]
+  },
+  {
+    "title": "从孔隙到导电颗粒",
+    "english": "A REAL-WORLD ANALOGY",
+    "lines": [
+      {
+        "zh": "把孔隙换成导电颗粒，周围换成绝缘材料。连接问题，又出现了。",
+        "en": "Replace pores with conducting particles in an insulating material. Connectivity matters again."
+      },
+      {
+        "zh": "孤立的颗粒，不能构成横跨样品的导电通路。",
+        "en": "Isolated particles cannot form a conducting route across the sample."
+      },
+      {
+        "zh": "当颗粒的接触网络连通两端，电流就有了可以通过的路径。",
+        "en": "When the contact network connects both sides, a route becomes available for current."
+      },
+      {
+        "zh": "现实里，颗粒形状、接触方式和空间维度，都会改变阈值。这里展示的是简化示意。",
+        "en": "Particle shape, contact rules and spatial dimension affect the threshold. This is a simplified illustration."
+      }
+    ]
+  },
+  {
+    "title": "数量之外，还要看连接",
+    "english": "WHAT TO TAKE AWAY",
+    "lines": [
+      {
+        "zh": "记住三个词：开放概率，连通簇，以及贯穿。",
+        "en": "Remember three ideas: opening probability, clusters and crossings."
+      },
+      {
+        "zh": "渗流理论研究的，是局部的随机连接，怎样形成系统尺度的通路。",
+        "en": "Percolation studies how local random connections create system-wide routes."
+      },
+      {
+        "zh": "临界附近，小小的增加，可能带来很大的连通变化。要判断规律，仍然需要重复试验。",
+        "en": "Near criticality, small increases can strongly change connectivity. Repeated trials are still needed."
+      },
+      {
+        "zh": "它可以启发我们理解连接，却不能证明，百分之五十八的努力，就等于没有努力。",
+        "en": "It can inspire thinking about connections, but cannot prove that 58% effort equals no effort."
+      },
+      {
+        "zh": "数量之外，看连接。一次结果之外，看概率。",
+        "en": "Beyond quantity, look at connectivity. Beyond one result, look at probability."
+      }
+    ]
+  }
+]

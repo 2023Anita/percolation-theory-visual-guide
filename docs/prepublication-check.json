@@ -1,0 +1,10 @@
+{
+  "local_links_checked": 36,
+  "public_text_files_scanned": 19,
+  "credential_patterns_found": false,
+  "private_absolute_paths_found": false,
+  "all_files_below_100MiB": true,
+  "curve_points": 57,
+  "subtitle_sentences": 38,
+  "errors": []
+}
